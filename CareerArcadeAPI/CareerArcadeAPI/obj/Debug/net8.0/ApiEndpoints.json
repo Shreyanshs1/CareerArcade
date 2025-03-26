@@ -30,5 +30,45 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.TestController",
+    "Method": "AdminOnly",
+    "RelativePath": "api/test/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.TestController",
+    "Method": "AnyUser",
+    "RelativePath": "api/test/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.TestController",
+    "Method": "EmployerOnly",
+    "RelativePath": "api/test/employer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.TestController",
+    "Method": "JobSeekerOnly",
+    "RelativePath": "api/test/jobseeker",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

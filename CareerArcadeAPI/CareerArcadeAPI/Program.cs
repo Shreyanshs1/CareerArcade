@@ -36,10 +36,13 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-builder.Services.AddAuthorizationBuilder()
-    .AddPolicy("JobSeeker", policy => policy.RequireRole("JobSeeker"))
-    .AddPolicy("Employer", policy => policy.RequireRole("Employer"))
-    .AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("JobSeeker", policy => policy.RequireRole("JobSeeker"));
+    options.AddPolicy("Employer", policy => policy.RequireRole("Employer"));
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+});
+
 
 var app = builder.Build();
 
@@ -52,8 +55,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.MapControllers();
 

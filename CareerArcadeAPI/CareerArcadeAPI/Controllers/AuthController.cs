@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -24,10 +25,6 @@ namespace CareerArcadeAPI.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterDto model)
         {
-            if (model.Role > 2)
-            {
-
-            }
             if (_context.Users.Any(u => u.Email == model.Email))
             {
                 return BadRequest(new { message = "Email already exists." });
@@ -62,12 +59,12 @@ namespace CareerArcadeAPI.Controllers
 
         private string GenerateJwtToken(User user)
         {
-            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"] ?? "YourSuperLongSecretKeyWithMoreThan32Characters!");
+            var key = Encoding.UTF8.GetBytes("YourSuperLongSecretKeyWithMoreThan32Characters!");
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role.ToString())
+                new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new(ClaimTypes.Email, user.Email),
+                new(ClaimTypes.Role, user.Role.ToString())
             };
 
             var token = new JwtSecurityToken(
@@ -81,9 +78,15 @@ namespace CareerArcadeAPI.Controllers
     }
     public class RegisterDto
     {
+        [Required]
+        [MaxLength(200)]
         public string Name { get; set; }
+        [EmailAddress]
+        [MaxLength(256)]
         public string Email { get; set; }
+        [Required]
         public string Password { get; set; }
+        [Required]
         public User.UserRole Role { get; set; }
     }
 

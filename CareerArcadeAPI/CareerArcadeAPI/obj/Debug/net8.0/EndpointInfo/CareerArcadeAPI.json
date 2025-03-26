@@ -66,6 +66,54 @@
           }
         }
       }
+    },
+    "/api/test/employer": {
+      "get": {
+        "tags": [
+          "Test"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/test/jobseeker": {
+      "get": {
+        "tags": [
+          "Test"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/test/admin": {
+      "get": {
+        "tags": [
+          "Test"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/test/all": {
+      "get": {
+        "tags": [
+          "Test"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -85,19 +133,27 @@
         "additionalProperties": false
       },
       "RegisterDto": {
+        "required": [
+          "name",
+          "password",
+          "role"
+        ],
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string"
           },
           "email": {
+            "maxLength": 256,
             "type": "string",
+            "format": "email",
             "nullable": true
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "role": {
             "$ref": "#/components/schemas/UserRole"
