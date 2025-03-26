@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "akhPlH0zY6g=",
+  "dgSpecHash": "WYwZ+GyOf0c=",
   "success": true,
   "projectFilePath": "C:\\Users\\Manoj\\Desktop\\Shreyansh\\CareerArcade\\CareerArcadeAPI\\CareerArcadeAPI\\CareerArcadeAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Manoj\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Manoj\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\Manoj\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Manoj\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Manoj\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.14\\microsoft.aspnetcore.authentication.jwtbearer.8.0.14.nupkg.sha512",
     "C:\\Users\\Manoj\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
