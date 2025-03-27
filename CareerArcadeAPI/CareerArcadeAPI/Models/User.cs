@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CareerArcadeAPI.Models
 {
@@ -23,6 +24,7 @@ namespace CareerArcadeAPI.Models
         public UserRole Role { get; set; } // Enum for user roles
 
         // Navigation Property: Employer can post multiple jobs
+        [JsonIgnore]
         public ICollection<Job> Jobs { get; set; } = new HashSet<Job>();
 
         // Navigation Property: Job Seeker can apply for multiple jobs

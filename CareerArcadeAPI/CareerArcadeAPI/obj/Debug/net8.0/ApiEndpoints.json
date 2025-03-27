@@ -32,6 +32,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "GetAllJobs",
+    "RelativePath": "api/Job",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "CreateJob",
+    "RelativePath": "api/Job",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "job",
+        "Type": "CareerArcadeAPI.Models.Job",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "GetJobById",
+    "RelativePath": "api/Job/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "UpdateJob",
+    "RelativePath": "api/Job/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedJob",
+        "Type": "CareerArcadeAPI.Models.Job",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "DeleteJob",
+    "RelativePath": "api/Job/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CareerArcadeAPI.Controllers.TestController",
     "Method": "AdminOnly",
     "RelativePath": "api/test/admin",
