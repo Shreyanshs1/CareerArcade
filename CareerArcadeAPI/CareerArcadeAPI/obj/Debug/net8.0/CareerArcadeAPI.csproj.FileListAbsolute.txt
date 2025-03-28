@@ -148,3 +148,4 @@ C:\Users\Manoj\Desktop\Shreyansh\CareerArcade\CareerArcadeAPI\CareerArcadeAPI\bi
 C:\Users\Manoj\Desktop\Shreyansh\CareerArcade\CareerArcadeAPI\CareerArcadeAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Manoj\Desktop\Shreyansh\CareerArcade\CareerArcadeAPI\CareerArcadeAPI\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\Manoj\Desktop\Shreyansh\CareerArcade\CareerArcadeAPI\CareerArcadeAPI\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Users\Manoj\Desktop\Shreyansh\CareerArcade\CareerArcadeAPI\CareerArcadeAPI\obj\Debug\net8.0\CareerArcadeAPI.sourcelink.json
