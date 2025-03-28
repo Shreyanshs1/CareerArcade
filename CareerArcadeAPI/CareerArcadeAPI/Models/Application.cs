@@ -28,5 +28,9 @@ namespace CareerArcadeAPI.Models
         public string ResumeUrl { get; set; }
 
         public DateTime AppliedOn { get; set; } = DateTime.Now;
+
+        public ApplicationStatus Status { get; set; } = ApplicationStatus.Pending;
+
+
     }
 }
