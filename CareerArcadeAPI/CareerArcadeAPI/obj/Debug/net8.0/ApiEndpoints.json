@@ -1,5 +1,62 @@
 [
   {
+    "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
+    "Method": "ApplyForJob",
+    "RelativePath": "api/Application/apply",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CareerArcadeAPI.Controllers.ApplyForJobDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
+    "Method": "GetApplicationsForEmployer",
+    "RelativePath": "api/Application/employer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
+    "Method": "GetMyApplications",
+    "RelativePath": "api/Application/my-applications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
+    "Method": "UpdateApplicationStatus",
+    "RelativePath": "api/Application/update-status/{applicationId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "applicationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CareerArcadeAPI.Controllers.UpdateApplicationStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CareerArcadeAPI.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
