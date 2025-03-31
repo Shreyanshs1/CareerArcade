@@ -1,17 +1,45 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import './Styles.css'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Signup from './Signup';
 
 const Login = () => {
     const [loginInfo, setLoginInfo] = useState({
-            email:'',
-            password:''
-        })
+        email:'',
+        password:''
+    })
 
     
-        const navigate = useNavigate();
+    const navigate = useNavigate();
+
+    // Check if user is already logged in and redirect
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("role");
+        const tokenExp = localStorage.getItem("tokenExp");
+        const currentTime = Date.now();
+
+        if (token && role && tokenExp) {
+        if (currentTime < tokenExp) {
+            // Redirect to respective dashboard based on role
+            switch (role) {
+            case "Admin":
+                navigate("/admin/dashboard");
+                break;
+            case "Employer":
+                navigate("/employer/dashboard");
+                break;
+            case "Jobseeker":
+                navigate("/jobseeker/dashboard");
+                break;
+            default:
+                navigate("/");
+            }
+        }
+        }
+    }, [navigate]);
 
 
     const handleChange=(e)=>{
@@ -30,7 +58,6 @@ const Login = () => {
         e.preventDefault()
         const{email,password}=loginInfo;
         if(!email || !password){
-            alert("All fields are required")
             return;
         } 
         try{
@@ -47,6 +74,8 @@ const Login = () => {
             localStorage.setItem("token", token);
             const decoded = jwtDecode(token);
             const role = decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+            const tokenExp = decoded.exp * 1000;
+            localStorage.setItem("tokenExp", tokenExp);
             localStorage.setItem("role",role);
             console.log("login successful")
             setTimeout(()=>{
@@ -68,7 +97,7 @@ const Login = () => {
           
           <button className="button-50">Login</button>
           </form>
-          <p className="p">Don't have an account? <span className="link">Sign Up</span></p>
+          <p className="p">Don't have an account? <Link to="/signup" className="link">Sign Up</Link></p>
         </div>
   )
 }

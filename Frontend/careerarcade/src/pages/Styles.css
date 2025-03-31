@@ -122,6 +122,7 @@ body {
   color: #2d79f3;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
   }
   
   .link:hover {

@@ -10,9 +10,21 @@ const ProtectedRoute = ({ allowedRoles }) => {
     // Fetch user from localStorage if already logged in
     const token = localStorage.getItem("token");
     const role = localStorage.getItem("role");
+    const tokenExp = localStorage.getItem("tokenExp");
+    const currentTime = Date.now();
+    // Check if the token is expired
+    if (tokenExp && currentTime > tokenExp) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("role");
+      localStorage.removeItem("tokenExp");
+      setLoading(false);
+      return;
+    }
+    // If token is present, set user state
     if (token) {
       try {
         setUser({ role: role, token:token });
+        setLoading(false);
       } catch (error) {
         console.error("Invalid token");
       }

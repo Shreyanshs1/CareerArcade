@@ -7,6 +7,7 @@ import JobSeekerDashboard from './pages/jobseeker/JobseekerDashboard'
 import EmployerDashboard from './pages/employer/EmployerDashboard'
 import Unauthorized from './pages/Unauthorized';
 import ProtectedRoute from './pages/protected/ProtectedRoute';
+import Signup from './pages/Signup';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/unauthorized" element={<Unauthorized />} />
 
           {/* Protected Routes */}
