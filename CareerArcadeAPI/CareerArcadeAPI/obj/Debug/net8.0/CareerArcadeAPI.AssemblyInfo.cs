@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CareerArcadeAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3735a2fdb6f6acfa44cd42dd044624b172393e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e559c4664dcc62d7bfb287e2eaa535298c39b8b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("CareerArcadeAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CareerArcadeAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
