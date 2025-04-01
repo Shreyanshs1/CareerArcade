@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import './Styles.css'
 import { Link, useNavigate } from "react-router-dom";
-import Signup from './Signup';
 import { handleSuccess, handleError } from './utils';
 import {ToastContainer} from 'react-toastify'
 
@@ -94,7 +93,7 @@ const Login = () => {
     }
     }
   return (
-    <div className='main'>
+    <>
     <div className="container">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
@@ -106,7 +105,7 @@ const Login = () => {
           <p className="p">Don't have an account? <Link to="/signup" className="link">Sign Up</Link></p>
           <ToastContainer/>
         </div>
-        </div>
+        </>
   )
 }
 

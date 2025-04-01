@@ -1,10 +1,4 @@
- .main{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
- 
+
  .container {
     background: white;
     padding: 20px;
@@ -126,4 +120,38 @@
   .link:hover {
     text-decoration: underline;
   }
+
+
+ select{
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 20px;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+ }
+
+ select.round {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+}
   
