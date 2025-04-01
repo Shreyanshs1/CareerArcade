@@ -50,7 +50,6 @@ const Login = () => {
         const copyLoginInfo = {...loginInfo}
         copyLoginInfo[name]=value;
         setLoginInfo(copyLoginInfo);
-        console.log(loginInfo);
     }
 
 
@@ -61,6 +60,7 @@ const Login = () => {
         e.preventDefault()
         const{email,password}=loginInfo;
         if(!email || !password){
+            handleError("All fields are required")
             return;
         } 
         try{
@@ -72,9 +72,11 @@ const Login = () => {
             }
         })
         const result = await response.json();
-        const {token}=result;
+        const {token,message,name}=result;
         if (response.ok) {
             localStorage.setItem("token", token);
+            localStorage.setItem("loggedInUser", name);
+            handleSuccess(message);
             const decoded = jwtDecode(token);
             const role = decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
             const tokenExp = decoded.exp * 1000;
@@ -85,14 +87,14 @@ const Login = () => {
                 navigate('/')
             },1000);
         } else {
-            handleError(result.message);
-            console.log(result.message);
+            handleError(message);
         }
     }catch(err){
         console.log(err);
     }
     }
   return (
+    <div className='main'>
     <div className="container">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
@@ -103,6 +105,7 @@ const Login = () => {
           </form>
           <p className="p">Don't have an account? <Link to="/signup" className="link">Sign Up</Link></p>
           <ToastContainer/>
+        </div>
         </div>
   )
 }

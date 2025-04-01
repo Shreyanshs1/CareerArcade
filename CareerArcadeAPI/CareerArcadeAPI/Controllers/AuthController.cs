@@ -58,7 +58,7 @@ namespace CareerArcadeAPI.Controllers
             }
 
             var token = GenerateJwtToken(user);
-            return Ok(new { token,user.Name });
+            return Ok(new { token,user.Name, message = "User logged in successfully!" });
         }
 
         //Helper function to generate JWT Token
