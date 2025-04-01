@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function AdminDashboard() {
   return (
-    <div>Admmin Dashboard</div>
+    <>
+    <Navbar/>
+    </>
   )
 }
 

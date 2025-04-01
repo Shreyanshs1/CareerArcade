@@ -89,7 +89,8 @@ const Login = () => {
             handleError(message);
         }
     }catch(err){
-        console.log(err);
+        handleError(err.message);
+        console.log(err.message);
     }
     }
   return (

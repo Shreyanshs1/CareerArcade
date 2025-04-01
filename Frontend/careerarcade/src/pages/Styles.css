@@ -154,4 +154,41 @@
     1.5em 1.5em;
   background-repeat: no-repeat;
 }
-  
+
+
+
+/* CSS */
+.logout {
+  background-color: #fbeee0;
+  border: 2px solid #ed1111;
+  border-radius: 30px;
+  box-shadow: #ed1111 4px 4px 0 0;
+  color: #ed1111;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.logout:hover {
+  background-color: #fff;
+}
+
+.logout:active {
+  box-shadow: #ed1111 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .logout {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
