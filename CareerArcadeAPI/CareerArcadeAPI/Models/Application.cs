@@ -18,17 +18,20 @@ namespace CareerArcadeAPI.Models
         // Foreign Key: Job Seeker who applied
         [ForeignKey("JobSeeker")]
         [Required]
-        public int JobSeekerId { get; set; } // More consistent naming
+        public int JobSeekerId { get; set; } 
 
         public User? JobSeeker { get; set; } // Nullable to avoid issues
 
+        //URL of the resume of Job Seeker
         [Required]
         [Url]
         [MaxLength(2048)]
         public string ResumeUrl { get; set; }
 
+        //Date and time of application
         public DateTime AppliedOn { get; set; } = DateTime.Now;
 
+        //Status of the Application, Pending by default
         public ApplicationStatus Status { get; set; } = ApplicationStatus.Pending;
 
 

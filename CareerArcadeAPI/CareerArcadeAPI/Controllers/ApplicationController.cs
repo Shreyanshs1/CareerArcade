@@ -27,7 +27,7 @@ namespace CareerArcadeAPI.Controllers
             // Extract the JobSeekerId from the token
             int jobSeekerId = GetUserIdFromToken();
 
-            // Check if the job exists (optional)
+            // Check if the job exists
             var job = await _context.Jobs.FindAsync(dto.JobId);
             if (job == null)
                 return NotFound(new { message = "Job not found" });

@@ -22,6 +22,8 @@ namespace CareerArcadeAPI.Controllers
             _configuration = configuration;
         }
 
+        // POST: api/Auth/register
+        //To register a new user
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterDto model)
         {
@@ -44,6 +46,8 @@ namespace CareerArcadeAPI.Controllers
             return Ok(new { message = "User registered successfully!" });
         }
 
+        // POST: api/Auth/login
+        //To login an existing user
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDto model)
         {
@@ -57,6 +61,7 @@ namespace CareerArcadeAPI.Controllers
             return Ok(new { token,user.Name });
         }
 
+        //Helper function to generate JWT Token
         private string GenerateJwtToken(User user)
         {
             var key = Encoding.UTF8.GetBytes("YourSuperLongSecretKeyWithMoreThan32Characters!");
@@ -76,6 +81,8 @@ namespace CareerArcadeAPI.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
+
+    //DTO for user registration
     public class RegisterDto
     {
         [Required]
@@ -90,6 +97,7 @@ namespace CareerArcadeAPI.Controllers
         public User.UserRole Role { get; set; }
     }
 
+    //Dto for user login
     public class LoginDto
     {
         public string Email { get; set; }
