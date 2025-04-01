@@ -54,7 +54,7 @@ namespace CareerArcadeAPI.Controllers
             }
 
             var token = GenerateJwtToken(user);
-            return Ok(new { token });
+            return Ok(new { token,user.Name });
         }
 
         private string GenerateJwtToken(User user)
