@@ -168,6 +168,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "SearchJobs",
+    "RelativePath": "api/Job/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "location",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "company",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "employerName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CareerArcadeAPI.Controllers.TestController",
     "Method": "AdminOnly",
     "RelativePath": "api/test/admin",

@@ -143,6 +143,34 @@ namespace CareerArcadeAPI.Controllers
             return Ok(new { message = "Job deleted successfully" });
         }
 
+        //5. Search Jobs based on different queries
+
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchJobs(
+    [FromQuery] string? title,
+    [FromQuery] string? location,
+    [FromQuery] string? company,
+    [FromQuery] string? employerName)
+        {
+            var query = _context.Jobs.Include(j => j.Employer).AsQueryable();
+
+            if (!string.IsNullOrEmpty(title))
+                query = query.Where(j => j.Title.Contains(title));
+
+            if (!string.IsNullOrEmpty(location))
+                query = query.Where(j => j.Location.Contains(location));
+
+            if (!string.IsNullOrEmpty(company))
+                query = query.Where(j => j.Company.Contains(company));
+
+            if (!string.IsNullOrEmpty(employerName))
+                query = query.Where(j => j.Employer.Name.Contains(employerName));
+
+            var jobs = await query.ToListAsync();
+            return Ok(jobs);
+        }
+
+
         // Helper function to extract user ID from token
         private int? GetUserIdFromToken()
         {
