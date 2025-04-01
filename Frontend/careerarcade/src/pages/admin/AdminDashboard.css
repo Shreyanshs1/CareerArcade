@@ -1,0 +1,47 @@
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f6f8;
+  }
+  
+  .dashboard-header {
+    margin-bottom: 20px;
+  }
+  
+  .cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .dashboard-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+  }
+  
+  .card-icon {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-card p {
+    font-size: 2em;
+    margin: 0;
+  }
+ 

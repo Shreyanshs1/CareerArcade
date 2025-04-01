@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import AdminDashboard from './pages/admin/AdminDashboard'
+import User from './pages/admin/User';
 import JobSeekerDashboard from './pages/jobseeker/JobseekerDashboard'
 import EmployerDashboard from './pages/employer/EmployerDashboard'
 import Unauthorized from './pages/Unauthorized';
@@ -30,6 +31,7 @@ function App() {
 
           <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/users" element={<User />} />
           </Route>
         </Routes>
       </Router>

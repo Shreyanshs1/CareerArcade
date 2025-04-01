@@ -157,38 +157,38 @@
 
 
 
-/* CSS */
 .logout {
-  background-color: #fbeee0;
-  border: 2px solid #ed1111;
-  border-radius: 30px;
-  box-shadow: #ed1111 4px 4px 0 0;
-  color: #ed1111;
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
-  line-height: 50px;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
   text-align: center;
-  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: none;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  vertical-align: middle;
 }
 
-.logout:hover {
-  background-color: #fff;
+.logout:hover,
+.logout:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
 }
 
 .logout:active {
-  box-shadow: #ed1111 2px 2px 0 0;
-  transform: translate(2px, 2px);
-}
-
-@media (min-width: 768px) {
-  .logout {
-    min-width: 120px;
-    padding: 0 25px;
-  }
+  opacity: .5;
 }
