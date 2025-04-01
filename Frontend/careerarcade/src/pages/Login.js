@@ -4,6 +4,9 @@ import { jwtDecode } from 'jwt-decode'
 import './Styles.css'
 import { Link, useNavigate } from "react-router-dom";
 import Signup from './Signup';
+import { handleSuccess, handleError } from './utils';
+import {ToastContainer} from 'react-toastify'
+
 
 const Login = () => {
     const [loginInfo, setLoginInfo] = useState({
@@ -82,7 +85,8 @@ const Login = () => {
                 navigate('/')
             },1000);
         } else {
-            alert(result.message);
+            handleError(result.message);
+            console.log(result.message);
         }
     }catch(err){
         console.log(err);
@@ -98,6 +102,7 @@ const Login = () => {
           <button className="button-50">Login</button>
           </form>
           <p className="p">Don't have an account? <Link to="/signup" className="link">Sign Up</Link></p>
+          <ToastContainer/>
         </div>
   )
 }
