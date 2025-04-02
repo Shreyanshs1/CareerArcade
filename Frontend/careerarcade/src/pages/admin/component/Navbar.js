@@ -29,12 +29,8 @@ const Navbar = () => {
           <li>
             <Link to="/admin/companies">Companies</Link>
           </li>
-          {/* Extra links you might consider */}
           <li>
-            <Link to="/admin/applications">Applications</Link>
-          </li>
-          <li>
-            <Link to="/admin/settings">Settings</Link>
+            <Link to="/admin/add-admin">Add Admin</Link>
           </li>
         </ul>
       </nav>
