@@ -11,6 +11,7 @@ import ProtectedRoute from './pages/protected/ProtectedRoute';
 import Signup from './pages/Signup';
 import Jobs from './pages/admin/Jobs';
 import Companies from './pages/admin/Companies';
+import AddAdmin from './pages/admin/AddAdmin';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/admin/users" element={<User />} />
             <Route path="/admin/jobs" element={<Jobs />} />
             <Route path="/admin/companies" element={<Companies />} />
+            <Route path="/admin/add-admin" element={<AddAdmin />} />
           </Route>
         </Routes>
       </Router>

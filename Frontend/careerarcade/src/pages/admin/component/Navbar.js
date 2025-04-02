@@ -11,7 +11,7 @@ const Navbar = () => {
       {/* Header with logo and portal name */}
       <div className="navbar-header">
         <img src={Logo} alt="Job Portal Logo" className="logo" />
-        <h1 className="portal-name">Career Arcade</h1>
+        <h1 className="portal-name">Admin Panel</h1>
       </div>
       
       {/* Navigation links */}
