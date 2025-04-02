@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './component/Navbar'; 
-import './User.css';
+import './css/User.css';
 
 const UserComponent = () => {
   const [users, setUsers] = useState([]);

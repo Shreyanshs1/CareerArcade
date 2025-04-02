@@ -1,5 +1,57 @@
 [
   {
+    "ContainingType": "CareerArcadeAPI.Controllers.AdminController",
+    "Method": "AddAdmin",
+    "RelativePath": "api/Admin/add-admin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CareerArcadeAPI.Controllers.AddAdminDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.AdminController",
+    "Method": "GetCompanies",
+    "RelativePath": "api/Admin/companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.AdminController",
+    "Method": "GetDashboardCounts",
+    "RelativePath": "api/Admin/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.AdminController",
+    "Method": "DeleteJob",
+    "RelativePath": "api/Admin/job/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
     "Method": "ApplyForJob",
     "RelativePath": "api/Application/apply",

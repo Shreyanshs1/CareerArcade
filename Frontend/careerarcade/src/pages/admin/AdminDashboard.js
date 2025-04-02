@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './component/Navbar'
-import './AdminDashboard.css' 
+import './css/AdminDashboard.css' 
 import { FaUsers, FaBriefcase, FaClipboardList } from 'react-icons/fa';
 
 function AdminDashboard() {
