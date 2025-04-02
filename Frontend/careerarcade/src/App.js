@@ -9,6 +9,7 @@ import EmployerDashboard from './pages/employer/EmployerDashboard'
 import Unauthorized from './pages/Unauthorized';
 import ProtectedRoute from './pages/protected/ProtectedRoute';
 import Signup from './pages/Signup';
+import Jobs from './pages/admin/Jobs';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/users" element={<User />} />
+            <Route path="/admin/jobs" element={<Jobs />} />
           </Route>
         </Routes>
       </Router>
