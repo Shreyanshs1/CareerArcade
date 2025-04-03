@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../components/Navbar.css"; 
-import Logo from "../../assets/Logo.png"; 
-import LogoutButton from "../../components/Logout";
+import "../../../components/css/Navbar.css"; // Import CSS for styling
+import Logo from "../../../assets/Logo.png"; 
+import LogoutButton from "../../../components/Logout";
 
 const Navbar = () => {
   return (
@@ -12,6 +12,7 @@ const Navbar = () => {
         <span className="company-name">CareerArcade</span>
       </div>
       <ul className="nav-links">
+        <li><Link to="/jobseeker/profile">Profile</Link></li>
         <li><Link to="/jobseeker/dashboard">Dashboard</Link></li>
         <li><Link to="/jobs">Jobs</Link></li>
         <li><Link to="/about">About</Link></li>

@@ -39,6 +39,7 @@ namespace CareerArcadeAPI.Controllers
         // GET: api/users/{id}
         // Anyone can view a user's profile.
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetUserById(int id)
         {
             var user = await _context.Users
