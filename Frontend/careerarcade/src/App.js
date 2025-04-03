@@ -12,6 +12,7 @@ import Signup from './pages/Signup';
 import Jobs from './pages/admin/Jobs';
 import Companies from './pages/admin/Companies';
 import AddAdmin from './pages/admin/AddAdmin';
+import YourProfile from './components/YourProfile';
 
 function App() {
   return (
@@ -24,8 +25,12 @@ function App() {
           <Route path="/unauthorized" element={<Unauthorized />} />
 
           {/* Protected Routes */}
-          <Route element={<ProtectedRoute allowedRoles={["Jobseeker"]} />}>
+          <Route element={<ProtectedRoute allowedRoles={["JobSeeker"]} />}>
             <Route path="/jobseeker/dashboard" element={<JobSeekerDashboard />} />
+          </Route>
+
+          <Route element={<ProtectedRoute allowedRoles={["JobSeeker","Employer","Admin"]} />}>
+            <Route path="/your-profile" element={<YourProfile />} />
           </Route>
 
           <Route element={<ProtectedRoute allowedRoles={["Employer"]} />}>
