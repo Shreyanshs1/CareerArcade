@@ -28,6 +28,7 @@ const Companies = () => {
       }
 
       const data = await response.json();
+      console.log(data); // Debugging line to check the response
       setCompanies(data);
     } catch (err) {
       setError(err.message);
@@ -38,6 +39,8 @@ const Companies = () => {
   // Fetch companies when component mounts
   useEffect(() => {
     fetchCompanies();
+    console.log("state",companies); // Debugging line to check the companies state
+
   }, []);
 
   return (
@@ -61,11 +64,9 @@ const Companies = () => {
               {companies.length > 0 ? (
                 companies.map((company, index) => (
                   <tr key={index}>
-                    <td>{company.name}</td>
+                    <td>{company.company}</td>
                     <td>
-                      {company.description.length > 100
-                        ? `${company.description.substring(0, 100)}...`
-                        : company.description}
+                      {company.companyDescription}
                     </td>
                   </tr>
                 ))
