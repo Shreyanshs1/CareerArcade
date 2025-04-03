@@ -1,0 +1,89 @@
+.post-job-page {
+    display: flex;
+    height: 70vh;
+  }
+  
+  .post-job-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f6f8;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    text-align: center;
+    margin-bottom: 15px;
+    color: green;
+  }
+  
+  .job-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    /* Ensure a wide container */
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  /* Force two columns with row direction */
+  .form-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  /* Left column for smaller inputs */
+  .form-column.left {
+    flex: 1;
+    /* Optional: set a min-width if needed */
+    min-width: 250px;
+  }
+  
+  /* Right column for larger textareas */
+  .form-column.right {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .large-group textarea {
+    height: 150px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  

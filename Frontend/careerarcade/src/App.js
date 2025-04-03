@@ -13,6 +13,7 @@ import Jobs from './pages/admin/Jobs';
 import Companies from './pages/admin/Companies';
 import AddAdmin from './pages/admin/AddAdmin';
 import YourProfile from './components/YourProfile';
+import PostJob from './pages/employer/PostJob';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
           <Route element={<ProtectedRoute allowedRoles={["Employer"]} />}>
             <Route path="/employer/dashboard" element={<EmployerDashboard />} />
+            <Route path="/employer/post-job" element={<PostJob />} />
           </Route>
 
           <Route element={<ProtectedRoute allowedRoles={["Admin"]} />}>
