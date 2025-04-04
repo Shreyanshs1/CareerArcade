@@ -130,6 +130,49 @@ namespace CareerArcadeAPI.Controllers
             return Ok(applications);
         }
 
+
+        // GET: api/application/job/{jobId}
+        [HttpGet("job/{jobId}")]
+        [Authorize(Roles = "Employer")]
+        public async Task<IActionResult> GetJobWithApplications(int jobId)
+        {
+            int employerId = GetUserIdFromToken();
+
+            var job = await _context.Jobs
+                .Include(j => j.Applications)
+                    .ThenInclude(a => a.JobSeeker)
+                .FirstOrDefaultAsync(j => j.Id == jobId && j.EmployerId == employerId);
+
+            if (job == null)
+                return NotFound(new { message = "Job not found or access denied" });
+
+            var result = new
+            {
+                job.Id,
+                job.Title,
+                job.Description,
+                job.Company,
+                job.Location,
+                Applications = job.Applications.Select(a => new
+                {
+                    a.Id,
+                    a.ResumeUrl,
+                    a.AppliedOn,
+                    a.Status,
+                    JobSeeker = new
+                    {
+                        a.JobSeeker.Id,
+                        a.JobSeeker.Name,
+                        a.JobSeeker.Email
+                    }
+                })
+            };
+
+            return Ok(result);
+        }
+
+
+
         // Helper method: Extracts user id from JWT token
         private int GetUserIdFromToken()
         {

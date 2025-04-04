@@ -143,7 +143,7 @@ namespace CareerArcadeAPI.Controllers
             return Ok(new { message = "Job deleted successfully" });
         }
 
-        //5. Search Jobs based on different queries
+        //6. Search Jobs based on different queries
 
         [HttpGet("search")]
         public async Task<IActionResult> SearchJobs(
@@ -167,6 +167,29 @@ namespace CareerArcadeAPI.Controllers
                 query = query.Where(j => j.Employer.Name.Contains(employerName));
 
             var jobs = await query.ToListAsync();
+            return Ok(jobs);
+        }
+
+        //7. GET: api/application/my-jobs
+        [HttpGet("my-jobs")]
+        [Authorize(Roles = "Employer")]
+        public async Task<IActionResult> GetJobsByEmployer()
+        {
+            var employerId = GetUserIdFromToken();
+
+            var jobs = await _context.Jobs
+                .Where(j => j.EmployerId == employerId)
+                .Select(j => new
+                {
+                    j.Id,
+                    j.Title,
+                    j.Description,
+                    j.Company,
+                    j.Location,
+                    j.PostedOn
+                })
+                .ToListAsync();
+
             return Ok(jobs);
         }
 

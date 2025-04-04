@@ -79,6 +79,22 @@
   },
   {
     "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
+    "Method": "GetJobWithApplications",
+    "RelativePath": "api/Application/job/{jobId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.ApplicationController",
     "Method": "GetMyApplications",
     "RelativePath": "api/Application/my-applications",
     "HttpMethod": "GET",
@@ -217,6 +233,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CareerArcadeAPI.Controllers.JobController",
+    "Method": "GetJobsByEmployer",
+    "RelativePath": "api/Job/my-jobs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
