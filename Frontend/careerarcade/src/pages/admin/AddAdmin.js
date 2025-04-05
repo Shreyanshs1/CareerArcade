@@ -55,10 +55,11 @@ function AddAdmin() {
       <div className="form-container">
         <h2>Add Admin</h2>
         {message && <p className="message">{message}</p>}
-        <form onSubmit={handleSubmit}>
+        <form className='add-admin-form ' onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>
-            <input
+            <input className="input"
+            placeholder="Name"
               type="text"
               name="name"
               value={formData.name}
@@ -68,7 +69,8 @@ function AddAdmin() {
           </div>
           <div className="form-group">
             <label>Email:</label>
-            <input
+            <input className="input"
+            placeholder="Email"
               type="email"
               name="email"
               value={formData.email}
@@ -78,7 +80,8 @@ function AddAdmin() {
           </div>
           <div className="form-group">
             <label>Password:</label>
-            <input
+            <input className="input"
+            placeholder="Password"
               type="password"
               name="password"
               value={formData.password}
@@ -86,7 +89,7 @@ function AddAdmin() {
               required
             />
           </div>
-          <button type="submit" disabled={loading}>
+          <button className="button-50" type="submit" disabled={loading}>
             {loading ? 'Adding...' : 'Add Admin'}
           </button>
         </form>

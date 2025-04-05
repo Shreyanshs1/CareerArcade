@@ -9,11 +9,8 @@
     background-color: #f4f6f8;
   }
   
-  h2 {
-    margin-bottom: 20px;
-  }
   
-  form {
+  .add-admin-form {
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -25,20 +22,20 @@
     margin-bottom: 15px;
   }
   
-  label {
+  /* label {
     display: block;
     font-weight: bold;
-  }
+  } */
   
-  input {
+  /* input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+  } */
   
-  button {
+  /* button {
     width: 100%;
     padding: 10px;
     background-color: #3498db;
@@ -47,7 +44,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
+  } */
   
   button:disabled {
     background-color: #7fb3d5;

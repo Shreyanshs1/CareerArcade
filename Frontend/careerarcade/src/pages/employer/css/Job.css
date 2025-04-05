@@ -1,0 +1,52 @@
+.job-details-container {
+    padding: 2rem;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .delete-btn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .job-description {
+    white-space: pre-wrap;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .application-list {
+    margin-top: 1.5rem;
+  }
+  
+  .application-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: #fafafa;
+  }
+  
+  .status-buttons button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ddd;
+    background: #eee;
+    cursor: pointer;
+  }
+  
+  .status-buttons .active {
+    font-weight: bold;
+    background: #c7f0d8;
+    border-color: #93e4b1;
+  }
+  

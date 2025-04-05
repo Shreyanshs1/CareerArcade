@@ -94,7 +94,7 @@ const Login = () => {
     }
     }
   return (
-    <>
+    <div className='main-container'>
     <div className="container">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
@@ -106,7 +106,7 @@ const Login = () => {
           <p className="p">Don't have an account? <Link to="/signup" className="link">Sign Up</Link></p>
           <ToastContainer/>
         </div>
-        </>
+        </div>
   )
 }
 

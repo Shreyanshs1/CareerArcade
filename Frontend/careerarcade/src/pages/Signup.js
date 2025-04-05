@@ -90,7 +90,7 @@ const Signup = () => {
   };
 
   return (
-    <>
+    <div className="main-container">
     <div className="container">
       <h2>Signup</h2>
       <form onSubmit={handleSubmit}>
@@ -132,7 +132,7 @@ const Signup = () => {
       </p>
       <ToastContainer/>
     </div>
-    </>
+    </div>
   );
 };
 

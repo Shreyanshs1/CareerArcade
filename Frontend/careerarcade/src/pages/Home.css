@@ -1,11 +1,7 @@
 /* Home.css */
 .home-container {
     text-align: center;
-    width: 100%;
-    position: absolute;
-    top: 26px;
-    left: 0;
-    z-index: -1;
+    width: 100vw;
   }
   
   /* Hero Section */
