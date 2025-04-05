@@ -1,7 +1,10 @@
-  .post-job-container {
+
+
+.post-job-container {
+  text-align: center;
     flex-grow: 1;
     padding: 20px;
-    background-color: #f4f6f8;
+    background-color: #ffffff;
   }
   
   
@@ -17,7 +20,7 @@
     border-radius: 8px;
     /* Ensure a wide container */
     width: 100%;
-    max-width: 900px;
+    /* max-width: 900px; */
     margin: 0 auto;
   }
   
@@ -47,28 +50,15 @@
   
   .large-group textarea {
     height: 150px;
-  }
-  
-  /* input, textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  } */
+  }
   
   textarea {
     resize: vertical;
   }
-  
-  /* button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #3498db;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 15px;
-  } */
+
+  .mx-wd300 {
+    max-width: 300px;
+  }
+
   

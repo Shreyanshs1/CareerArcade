@@ -88,7 +88,7 @@ function PostJob() {
             <div className="form-column left">
               <div className="form-group">
                 <label>Employer ID:</label>
-                <input 
+                <input className="input mx-wd300" 
                   type="text" 
                   name="employerId" 
                   value={formData.employerId} 
@@ -97,7 +97,7 @@ function PostJob() {
               </div>
               <div className="form-group">
                 <label>Title:</label>
-                <input 
+                <input className="input mx-wd300" 
                   type="text" 
                   name="title" 
                   value={formData.title} 
@@ -107,7 +107,7 @@ function PostJob() {
               </div>
               <div className="form-group">
                 <label>Company:</label>
-                <input 
+                <input className="input mx-wd300" 
                   type="text" 
                   name="company" 
                   value={formData.company} 
@@ -117,7 +117,7 @@ function PostJob() {
               </div>
               <div className="form-group">
                 <label>Location:</label>
-                <input 
+                <input className="input mx-wd300" 
                   type="text" 
                   name="location" 
                   value={formData.location} 
@@ -127,7 +127,7 @@ function PostJob() {
               </div>
               <div className="form-group">
                 <label>Posted On:</label>
-                <input 
+                <input className="input mx-wd300" 
                   type="text" 
                   name="postedOn" 
                   value={formData.postedOn} 
@@ -139,7 +139,7 @@ function PostJob() {
             <div className="form-column right">
               <div className="form-group large-group">
                 <label>Description:</label>
-                <textarea 
+                <textarea className="input" 
                   name="description" 
                   value={formData.description} 
                   onChange={handleChange} 
@@ -148,7 +148,7 @@ function PostJob() {
               </div>
               <div className="form-group large-group">
                 <label>Company Description:</label>
-                <textarea 
+                <textarea className="input" 
                   name="companyDescription" 
                   value={formData.companyDescription} 
                   onChange={handleChange} 
@@ -157,7 +157,7 @@ function PostJob() {
               </div>
             </div>
           </div>
-          <button type="submit">Post Job</button>
+          <button type="submit" className="button-50">Post Job</button>
         </form>
       </div>
     </div>

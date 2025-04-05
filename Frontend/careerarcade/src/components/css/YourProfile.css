@@ -17,7 +17,6 @@
   
   .profile-info {
     padding: 20px;
-    width: 400px;
 background: rgba(255, 255, 255, 0.46);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -66,11 +65,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   .edit-btn {
     background-color: #3498db;
     color: white;
+    width: 100px;
   }
   
   .update-btn {
     background-color: #2ecc71;
     color: white;
+    padding: 10px;
   }
   
   .delete-btn {

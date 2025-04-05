@@ -31,7 +31,7 @@ function Home() {
             case "Employer":
                 navigate("/employer/dashboard");
                 break;
-            case "Jobseeker":
+            case "JobSeeker":
                 navigate("/jobseeker/dashboard");
                 break;
             default:
