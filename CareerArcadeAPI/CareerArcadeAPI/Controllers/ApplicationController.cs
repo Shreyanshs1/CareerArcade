@@ -158,7 +158,7 @@ namespace CareerArcadeAPI.Controllers
                     a.Id,
                     a.ResumeUrl,
                     a.AppliedOn,
-                    a.Status,
+                    Status = a.Status.ToString(),
                     JobSeeker = new
                     {
                         a.JobSeeker.Id,

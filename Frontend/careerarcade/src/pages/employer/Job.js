@@ -59,27 +59,53 @@ const Job = () => {
     }
   };
 
-  const handleStatusChange = async (applicationId, newStatus) => {
+
+
+  const statusMap = {
+    Pending: 0,
+    Reviewed: 1,
+    Accepted: 2,
+    Rejected: 3
+  };
+  
+  const handleStatusChange = async (applicationId, statusText) => {
     setStatusUpdating(applicationId);
     const token = localStorage.getItem('token');
+    const statusCode = statusMap[statusText];
+  
     try {
-      const response = await fetch(`https://localhost:7232/api/Application/${applicationId}/status?status=${newStatus}`, {
+      const response = await fetch(`https://localhost:7232/api/Application/update-status/${applicationId}`, {
         method: 'PUT',
         headers: {
+          'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
-        }
+        },
+        body: JSON.stringify({ status: statusCode })
       });
-
+  
       if (!response.ok) throw new Error('Failed to update status');
+  
+      // Update UI after status change
       const updatedApplications = job.applications.map(app =>
-        app.id === applicationId ? { ...app, status: newStatus } : app
+        app.id === applicationId ? { ...app, status: statusText } : app
       );
       setJob({ ...job, applications: updatedApplications });
     } catch (error) {
       alert(error.message);
     }
+  
     setStatusUpdating(null);
   };
+
+  
+  const statusTextMap = {
+  0: 'Pending',
+  1: 'Reviewed',
+  2: 'Accepted',
+  3: 'Rejected'
+};
+
+
 
   if (loading) return <p>Loading...</p>;
   if (message) return <p className="error">{message}</p>;
@@ -102,12 +128,12 @@ const Job = () => {
         <div className="application-list">
           {job.applications.map(app => (
             <div key={app.id} className="application-card">
-              <p><strong>Applicant:</strong> {app.applicantName}</p>
-              <p><strong>Email:</strong> {app.applicantEmail}</p>
+              <p><strong>Applicant:</strong> {app.jobSeeker.name}</p>
+              <p><strong>Email:</strong> {app.jobSeeker.email}</p>
               <p><strong>Resume:</strong> <a href={app.resumeUrl} target="_blank" rel="noopener noreferrer">View</a></p>
               <p><strong>Status:</strong> {app.status}</p>
               <div className="status-buttons">
-                {['Pending', 'Accepted', 'Rejected'].map(status => (
+                {['Pending','Reviewed', 'Accepted', 'Rejected'].map(status => (
                   <button
                     key={status}
                     onClick={() => handleStatusChange(app.id, status)}
