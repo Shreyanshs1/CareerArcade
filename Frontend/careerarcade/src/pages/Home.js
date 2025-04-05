@@ -56,7 +56,7 @@ function Home() {
     <Navbar/>
     <div className="home-container">
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" id='hero'>
         <div className="hero-content">
           <h1>Find Your Dream Job with <span className="highlight">CareerArcade</span></h1>
           <p>Connecting job seekers with top employers in just a few clicks.</p>
@@ -68,7 +68,7 @@ function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="features">
+      <section className="features" id='features'>
         <h2>Why Choose CareerArcade?</h2>
         <div className="feature-grid">
           <div className="feature-item">
@@ -87,7 +87,7 @@ function Home() {
       </section>
 
     {/* company-logo section */}
-      <section className="company-logos">
+      <section className="company-logos"  id='company'>
         <h2>Trusted by Top Companies</h2>
         <div className="logo-grid">
           {companyLogos.map((logo, index) => (
@@ -97,7 +97,7 @@ function Home() {
       </section>
 
       {/* About Section */}
-      <section className="about">
+      <section className="about" id='about'>
         <h2>About CareerArcade</h2>
         <p>
           CareerArcade is a platform dedicated to bridging the gap between job seekers and 
@@ -133,7 +133,8 @@ function Home() {
       <section className="cta">
         <h2>Ready to Take the Next Step?</h2>
         <p>Sign up today and start your job search with CareerArcade.</p>
-        <Link to="/signup" className="btn-primary">Join Now</Link>
+        <div className="hero-buttons">
+        <Link to="/signup" className="btn-primary">Get Started</Link></div>
       </section>
       <Footer/>
     </div>
