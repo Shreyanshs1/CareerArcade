@@ -197,3 +197,7 @@
 .logout:active {
   opacity: .5;
 }
+
+.bg-blue-500{
+  background-color: #0B2447;
+}

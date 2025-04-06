@@ -15,6 +15,8 @@ import AddAdmin from './pages/admin/AddAdmin';
 import YourProfile from './components/YourProfile';
 import PostJob from './pages/employer/PostJob';
 import Job from './pages/employer/Job';
+import NotFound from './pages/notfound/NotFound';
+import JobsPage from './pages/jobseeker/JobsPage';
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
           {/* Protected Routes */}
           <Route element={<ProtectedRoute allowedRoles={["JobSeeker"]} />}>
             <Route path="/jobseeker/dashboard" element={<JobSeekerDashboard />} />
+            <Route path="/jobseeker/jobs" element={<JobsPage />} />
           </Route>
 
           <Route element={<ProtectedRoute allowedRoles={["JobSeeker","Employer","Admin"]} />}>
@@ -48,6 +51,7 @@ function App() {
             <Route path="/admin/companies" element={<Companies />} />
             <Route path="/admin/add-admin" element={<AddAdmin />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>
