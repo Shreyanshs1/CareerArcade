@@ -201,3 +201,7 @@
 .bg-blue-500{
   background-color: #0B2447;
 }
+
+.w-100vw{
+  width: 100vw;
+}

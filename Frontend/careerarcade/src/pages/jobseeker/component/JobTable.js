@@ -9,6 +9,8 @@ const JobTable = () => {
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,14 +22,34 @@ const JobTable = () => {
     loadJobs();
   }, []);
 
-  const handleSearch = (e) => {
-    const value = e.target.value.toLowerCase();
-    setSearchText(value);
-    const filtered = jobs.filter((job) =>
-      job.title.toLowerCase().includes(value)
-    );
+  // Extract unique locations & companies for dropdowns
+  const uniqueLocations = [...new Set(jobs.map((job) => job.location).filter(Boolean))];
+  const uniqueCompanies = [...new Set(jobs.map((job) => job.company).filter(Boolean))];
+
+  const handleFilter = () => {
+    let filtered = [...jobs];
+
+    if (searchText) {
+      filtered = filtered.filter((job) =>
+        job.title.toLowerCase().includes(searchText.toLowerCase())
+      );
+    }
+
+    if (selectedLocation) {
+      filtered = filtered.filter((job) => job.location === selectedLocation);
+    }
+
+    if (selectedCompany) {
+      filtered = filtered.filter((job) => job.company === selectedCompany);
+    }
+
     setFilteredJobs(filtered);
   };
+
+  // Trigger filter on every change
+  useEffect(() => {
+    handleFilter();
+  }, [searchText, selectedLocation, selectedCompany]);
 
   const columns = [
     {
@@ -53,12 +75,10 @@ const JobTable = () => {
     {
       name: 'Employer',
       selector: (row) => row.employer?.name || 'N/A',
-      sortable: true,
     },
     {
       name: 'Email',
       selector: (row) => row.employer?.email || 'N/A',
-      sortable: true,
     },
     {
       name: 'Action',
@@ -75,13 +95,45 @@ const JobTable = () => {
 
   return (
     <div className="p-4">
-      <input
-        type="text"
-        placeholder="Search by job title..."
-        value={searchText}
-        onChange={handleSearch}
-        className="mb-4 p-2 border rounded w-full md:w-1/2"
-      />
+      <div className="flex flex-wrap gap-4 mb-4">
+        {/* Search Input */}
+        <input
+          type="text"
+          placeholder="Search by job title..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          className="p-2 border rounded w-full md:w-[250px]"
+        />
+
+        {/* Location Dropdown */}
+        <select
+          value={selectedLocation}
+          onChange={(e) => setSelectedLocation(e.target.value)}
+          className="p-2 border rounded w-full md:w-[200px]"
+        >
+          <option value="">All Locations</option>
+          {uniqueLocations.map((loc) => (
+            <option key={loc} value={loc}>
+              {loc}
+            </option>
+          ))}
+        </select>
+
+        {/* Company Dropdown */}
+        <select
+          value={selectedCompany}
+          onChange={(e) => setSelectedCompany(e.target.value)}
+          className="p-2 border rounded w-full md:w-[200px]"
+        >
+          <option value="">All Companies</option>
+          {uniqueCompanies.map((comp) => (
+            <option key={comp} value={comp}>
+              {comp}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <DataTable
         title="Available Jobs"
         columns={columns}
