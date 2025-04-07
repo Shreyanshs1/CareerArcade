@@ -94,7 +94,7 @@ const JobTable = () => {
   ];
 
   return (
-    <div className="p-4">
+    <div className="w-100vw px-5 mt-4">
       <div className="flex flex-wrap gap-4 mb-4">
         {/* Search Input */}
         <input
