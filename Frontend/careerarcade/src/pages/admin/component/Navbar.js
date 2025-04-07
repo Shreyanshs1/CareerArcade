@@ -5,13 +5,15 @@ import Logout from '../../../components/Logout';
 import Logo from '../../../assets/Logo.png'; 
 
 const Navbar = () => {
+  const name = localStorage.getItem('loggedInUser');
+
 
   return (
     <div className="vertical-navbar">
       {/* Header with logo and portal name */}
       <div className="navbar-header">
         <img src={Logo} alt="Job Portal Logo" className="logo" />
-        <h1 className="portal-name">Admin Panel</h1>
+        <h1 className="portal-name">Hello "{name}"</h1>
       </div>
       
       {/* Navigation links */}

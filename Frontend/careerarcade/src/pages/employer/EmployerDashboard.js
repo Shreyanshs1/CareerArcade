@@ -8,6 +8,8 @@ const EmployerDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const name = localStorage.getItem('loggedInUser');
+
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -50,6 +52,7 @@ const EmployerDashboard = () => {
   return (
     <div className="dashboard-container">
       <Navbar />
+      <h3 class="text-center mt-3">Hello <span className='text-primary'>"{name}"</span></h3>
       <h2>My Posted Jobs</h2>
       {loading ? (
         <p>Loading...</p>

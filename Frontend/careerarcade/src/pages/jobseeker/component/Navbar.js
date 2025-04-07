@@ -6,7 +6,7 @@ import LogoutButton from "../../../components/Logout";
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar z-index-10">
       <div className="logo">
         <img src={Logo} alt="CareerArcade Logo" className="logo-img" />
         <span className="company-name">CareerArcade</span>

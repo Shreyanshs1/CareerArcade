@@ -4,11 +4,13 @@ import MyApplications from './component/MyApplications';
 import Navbar from './component/Navbar'; // Adjust the import path as necessary
 
 const JobseekerDashboard = () => {
+  const name = localStorage.getItem('loggedInUser');
   return (
-    <div className="container mt-4">
+    <div className="dashboard-container">
       <Navbar />
+      <h3 class="text-center mt-3">Hello <span className='text-primary'>"{name}"</span></h3>
       <h2 className="mb-4">Jobseeker Dashboard</h2>
-      <div className="row">
+      <div className="row ">
         <div className="col-md-6">
           <SearchComponent />
         </div>
