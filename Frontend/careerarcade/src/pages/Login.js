@@ -95,7 +95,7 @@ const Login = () => {
     }
   return (
     <div className='main-container'>
-    <div className="container">
+    <div className="login-container">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
           <input type="email" placeholder="Email" name='email' className="input" onChange={handleChange}/>

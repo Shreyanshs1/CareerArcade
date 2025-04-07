@@ -18,6 +18,7 @@ import Job from './pages/employer/Job';
 import NotFound from './pages/notfound/NotFound';
 import JobsPage from './pages/jobseeker/JobsPage';
 import JobDetailsPage from './pages/jobseeker/JobDetailsPage';
+import SearchResults from './pages/jobseeker/SearchResults';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/jobseeker/dashboard" element={<JobSeekerDashboard />} />
             <Route path="/jobseeker/jobs" element={<JobsPage />} />
             <Route path="/jobseeker/jobs/:id" element={<JobDetailsPage />} />
+            <Route path="/jobseeker/search-results" element={<SearchResults />} />
           </Route>
 
           <Route element={<ProtectedRoute allowedRoles={["JobSeeker","Employer","Admin"]} />}>
