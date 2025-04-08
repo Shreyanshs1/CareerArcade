@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/Navbar.css";
-import Logo from "../assets/Logo.png"; // Adjust the path to your logo image
+import Logo from "../assets/Logo.png"; 
 
 const Navbar = () => {
   return (
@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li><a href="#hero">Home</a></li>
-        <li><Link to="/jobs">Jobs</Link></li>
+        <li><Link to="/jobseeker/jobs">Jobs</Link></li>
         <li><a href="#company">Companies</a></li>
         <li><a href="#about">About</a></li>
       </ul>
