@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './css/Job.css';
+import {ToastContainer} from 'react-toastify'
+import {handleSuccess, handleError} from '../utils';
+
 
 const Job = () => {
   const { id } = useParams();
@@ -31,6 +34,7 @@ const Job = () => {
         setJob(data);
       } catch (error) {
         setMessage(error.message);
+        handleError(error.message);
       }
 
       setLoading(false);
@@ -52,8 +56,10 @@ const Job = () => {
       });
 
       if (!response.ok) throw new Error('Failed to delete job');
-      alert("Job deleted successfully");
-      navigate('/employer/dashboard');
+      handleError("Job deleted successfully");
+      setTimeout(()=>{
+        navigate('/employer/dashboard')
+    },1000);
     } catch (error) {
       setMessage(error.message);
     }
@@ -91,7 +97,7 @@ const Job = () => {
       );
       setJob({ ...job, applications: updatedApplications });
     } catch (error) {
-      alert(error.message);
+      handleError(error.message);
     }
   
     setStatusUpdating(null);
@@ -148,6 +154,7 @@ const Job = () => {
           ))}
         </div>
       )}
+      <ToastContainer/>
     </div>
   );
 };

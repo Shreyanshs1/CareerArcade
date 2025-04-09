@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './component/Navbar'; 
 import {jwtDecode} from 'jwt-decode';
 import './css/PostJob.css';
+import {ToastContainer} from 'react-toastify'
+import {handleSuccess, handleError} from '../utils';
 
 function PostJob() {
   const [formData, setFormData] = useState({
@@ -63,6 +65,7 @@ function PostJob() {
         throw new Error('Failed to post job');
       }
       setMessage('Job posted successfully!');
+      handleSuccess('Job posted successfully!');
       setFormData((prevData) => ({
         ...prevData,
         title: '',
@@ -73,6 +76,7 @@ function PostJob() {
       }));
     } catch (error) {
       setMessage(error.message);
+      handleError(error.message);
     }
   };
 
@@ -160,6 +164,7 @@ function PostJob() {
           <button type="submit" className="button-50">Post Job</button>
         </form>
       </div>
+      <ToastContainer/>
     </div>
   );
 }
