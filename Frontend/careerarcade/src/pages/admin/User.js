@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './component/Navbar'; 
 import './css/User.css';
+import {ToastContainer} from 'react-toastify'
+import { handleSuccess, handleError } from '../utils';
 
 const UserComponent = () => {
   const [users, setUsers] = useState([]);
@@ -51,10 +53,12 @@ const UserComponent = () => {
       if (!response.ok) {
         throw new Error('Failed to delete user');
       }
+      //Success message
+      handleSuccess('User deleted successfully!');
       // Refresh the users list after successful deletion
       fetchUsers();
     } catch (err) {
-      alert(err.message);
+      handleError(err.message);
     }
   };
 
@@ -105,6 +109,7 @@ const UserComponent = () => {
           </table>
         )}
       </div>
+      <ToastContainer/>
     </div>
   );
 };

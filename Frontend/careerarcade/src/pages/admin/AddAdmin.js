@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from './component/Navbar';
 import './css/AddAdmin.css';
+import {ToastContainer} from 'react-toastify'
+import {handleSuccess, handleError} from '../utils'
 
 function AddAdmin() {
   const [formData, setFormData] = useState({
@@ -39,11 +41,11 @@ function AddAdmin() {
       if (!response.ok) {
         throw new Error('Failed to add admin');
       }
-
+      handleSuccess('Admin added successfully!')
       setMessage('Admin added successfully!');
       setFormData({ name: '', email: '', password: '' }); // Reset form after success
     } catch (error) {
-      setMessage(error.message);
+      handleError(error.message);
     }
 
     setLoading(false);
@@ -94,6 +96,7 @@ function AddAdmin() {
           </button>
         </form>
       </div>
+      <ToastContainer/>
     </div>
   );
 }
