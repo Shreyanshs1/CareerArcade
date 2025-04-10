@@ -16,10 +16,10 @@ const Footer = () => {
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/jobs">Browse Jobs</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><Link to="/jobseeker/jobs">Browse Jobs</Link></li>
+            <li><a href="#company">Companies</a></li>
           </ul>
         </div>
 
@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="footer-social">
           <h3>Follow Us</h3>
           <div className="social-icons">
-            <a href="#" target="_blank" rel="noopener noreferrer">🔵 Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">🔵 Github</a>
             <a href="#" target="_blank" rel="noopener noreferrer">🔵 Twitter</a>
             <a href="#" target="_blank" rel="noopener noreferrer">🔵 LinkedIn</a>
           </div>
