@@ -1,4 +1,3 @@
-// src/pages/NotFound.js
 import React from 'react';
 
 const NotFound = () => {

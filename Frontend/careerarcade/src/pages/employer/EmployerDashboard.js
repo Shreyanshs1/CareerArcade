@@ -12,6 +12,7 @@ const EmployerDashboard = () => {
 
 
   useEffect(() => {
+    // Fetch jobs posted by the employer
     const fetchJobs = async () => {
       const token = localStorage.getItem('token');
 
@@ -45,6 +46,7 @@ const EmployerDashboard = () => {
     fetchJobs();
   }, []);
 
+  // Function to handle job card click
   const handleJobClick = (id) => {
     navigate(`/employer/job/${id}`);
   };

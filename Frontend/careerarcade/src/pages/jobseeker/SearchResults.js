@@ -14,6 +14,7 @@ const SearchResults = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Fetch jobs based on the search term
     const fetchJobs = async () => {
       setLoading(true);
       try {

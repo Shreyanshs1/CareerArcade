@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchComponent from './component/SearchComponent';
 import MyApplications from './component/MyApplications';
-import Navbar from './component/Navbar'; // Adjust the import path as necessary
+import Navbar from './component/Navbar';
 
 const JobseekerDashboard = () => {
   const name = localStorage.getItem('loggedInUser');

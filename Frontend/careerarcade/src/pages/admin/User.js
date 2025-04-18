@@ -16,7 +16,7 @@ const UserComponent = () => {
     setLoading(true);
     setError('');
     try {
-      const token = localStorage.getItem('token'); // Adjust the key if needed
+      const token = localStorage.getItem('token');
       const response = await fetch(API_BASE_URL, {
         method: 'GET',
         headers: {

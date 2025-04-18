@@ -1,8 +1,7 @@
-// src/pages/jobseeker/JobsPage.jsx
 import React from 'react';
 import JobTable from './component/JobTable';
 import Navbar from './component/Navbar';
-import './css/JobsPage.css'; // Import your CSS file for styling
+import './css/JobsPage.css';
 
 const JobsPage = () => {
   return (

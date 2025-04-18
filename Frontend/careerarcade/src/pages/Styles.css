@@ -22,14 +22,7 @@
     color: #151717;
     font-weight: 600;
   }
-/*   
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  } */
+
 
   .input {
     padding: 20px;
@@ -50,10 +43,6 @@
   }
 
   
-
-
-
-/* CSS */
 .button-50 {
   appearance: button;
   background-color: #000;

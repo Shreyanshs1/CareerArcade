@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../../components/css/Navbar.css"; // Import CSS for styling
+import "../../../components/css/Navbar.css";
 import Logo from "../../../assets/Logo.png"; 
 import LogoutButton from "../../../components/Logout";
 

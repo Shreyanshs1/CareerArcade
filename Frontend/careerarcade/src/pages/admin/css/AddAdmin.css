@@ -22,29 +22,6 @@
     margin-bottom: 15px;
   }
   
-  /* label {
-    display: block;
-    font-weight: bold;
-  } */
-  
-  /* input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  } */
-  
-  /* button {
-    width: 100%;
-    padding: 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  } */
   
   button:disabled {
     background-color: #7fb3d5;

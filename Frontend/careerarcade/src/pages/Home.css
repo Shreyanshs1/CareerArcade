@@ -142,8 +142,6 @@
   
   .company-logo {
     height: 90px;
-    /* width: 120px; */
-    /* height: auto; */
     object-fit: contain;
     margin: 25px;
   }

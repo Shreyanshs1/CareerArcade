@@ -15,6 +15,7 @@ const JobDetailsPage = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
+    // Fetch job details by ID
     const loadJob = async () => {
       try {
         const data = await fetchJobById(id);
@@ -30,6 +31,7 @@ const JobDetailsPage = () => {
     loadJob();
   }, [id]);
 
+  // Function to handle the application submission
   const handleApply = async () => {
     const token = localStorage.getItem('token');
     if (!token) {

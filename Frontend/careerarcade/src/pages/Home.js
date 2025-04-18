@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
-import './Home.css'; // Import your CSS file for styling
+import './Home.css';
 import meta from '../assets/meta.png';
 import google from '../assets/google.png';
 import apple from '../assets/apple.png';

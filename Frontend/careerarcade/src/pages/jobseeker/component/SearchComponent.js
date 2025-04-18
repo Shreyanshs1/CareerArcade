@@ -6,6 +6,7 @@ const SearchComponent = () => {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
+  // Function to handle the search submission
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim() === '') return;

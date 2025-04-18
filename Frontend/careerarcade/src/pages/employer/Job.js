@@ -14,6 +14,7 @@ const Job = () => {
   const [statusUpdating, setStatusUpdating] = useState(null);
 
   useEffect(() => {
+    // Fetch job details by ID
     const fetchJob = async () => {
       const token = localStorage.getItem('token');
       if (!token) {
@@ -43,6 +44,7 @@ const Job = () => {
     fetchJob();
   }, [id]);
 
+  // Function to handle the deletion of a job
   const handleDeleteJob = async () => {
     if (!window.confirm("Are you sure you want to delete this job?")) return;
 
@@ -74,6 +76,7 @@ const Job = () => {
     Rejected: 3
   };
   
+  // Function to handle status change
   const handleStatusChange = async (applicationId, statusText) => {
     setStatusUpdating(applicationId);
     const token = localStorage.getItem('token');

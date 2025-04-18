@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import { jwtDecode } from 'jwt-decode'; // Ensure this is imported correctly
+import { jwtDecode } from 'jwt-decode';
 import './css/YourProfile.css';
 
 function YourProfile() {
@@ -32,7 +32,7 @@ function YourProfile() {
       const decodedToken = jwtDecode(token);
       console.log("Decoded Token:", decodedToken); // Debugging decoded token
 
-      // *** Use the correct key for the User ID from your specific payload ***
+      // Extract user ID from the token using a standard claim URI
       const userIdClaim = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
       currentUserId = decodedToken[userIdClaim];
       console.log("Extracted User ID:", currentUserId); // Debugging user ID
@@ -51,13 +51,11 @@ function YourProfile() {
       return; // Exit early
     }
 
-    // Define the async function to fetch data *inside* useEffect or useCallback
     const fetchUserData = async (userIdToFetch) => {
       console.log("Fetching user data for ID:", userIdToFetch);
-      // setLoading(true); // No need to set true here, already true initially
       setMessage(''); // Clear previous messages
 
-      // Construct API URL *inside* the function needing it
+      // Construct API URL dynamically using user ID
       const API_URL_FETCH = `https://shreyansh1807.bsite.net/api/user/${userIdToFetch}`;
 
       try {
@@ -72,9 +70,8 @@ function YourProfile() {
         console.log("Fetch Response Status:", response.status); // Debugging API response
 
         if (!response.ok) {
-          // Try to get more error details from response body if possible
           let errorBody = await response.text();
-          console.error(`API Error: Status ${response.status}, Body: ${errorBody}`);
+          console.error(`API Error: Status ${response.status}, Body: ${errorBody}`);// Debugging error response
           throw new Error(`Failed to fetch user profile (Status: ${response.status})`);
         }
 
@@ -167,9 +164,7 @@ function YourProfile() {
         throw new Error(`Failed to update profile (Status: ${response.status})`);
       }
 
-      // Assuming the PUT request doesn't return the full updated user,
-      // or if you want to ensure consistency, you could re-fetch the user data.
-      // For now, we optimistically update the state.
+      // Parse the response to get updated user data
       const updatedUser = { ...user, name: formData.name, email: formData.email };
       setUser(updatedUser);
       setMessage('Profile updated successfully!');
@@ -216,8 +211,8 @@ function YourProfile() {
         throw new Error(`Failed to delete profile (Status: ${response.status})`);
       }
 
-      // Clear local storage (or just the token) and redirect
-      localStorage.clear(); // Or localStorage.removeItem('token');
+      // Clear local storage and redirect
+      localStorage.clear();
       setMessage('Profile deleted successfully. Redirecting...');
       setUser(null); // Clear user state
 
@@ -226,18 +221,13 @@ function YourProfile() {
         window.location.href = '/login'; // Redirect to login page
       }, 2000);
 
-      // Note: setLoading(false) might not be strictly needed here if redirecting,
-      // but it's good practice if the redirect logic changes. We'll skip it before redirect.
-
     } catch (error) {
       console.error("Error deleting user:", error);
       setMessage(error.message || 'An error occurred while deleting profile.');
       setLoading(false); // Set loading false only if deletion failed
     }
-    // setLoading(false); // Might be placed here if not redirecting immediately
   };
 
-  // --- Render Logic ---
 
   return (
     <div className="profile-page">

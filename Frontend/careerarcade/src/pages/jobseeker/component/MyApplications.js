@@ -9,6 +9,7 @@ const MyApplications = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Fetch the applications for the logged-in user
     const fetchApplications = async () => {
       const token = localStorage.getItem('token');
       if (!token) return;

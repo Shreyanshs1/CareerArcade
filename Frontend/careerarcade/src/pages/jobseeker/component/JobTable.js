@@ -1,4 +1,3 @@
-// src/components/JobTable.jsx
 import React, { useState, useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 import { fetchJobs } from './jobApi';
