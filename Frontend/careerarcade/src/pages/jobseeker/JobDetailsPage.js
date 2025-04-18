@@ -39,7 +39,7 @@ const JobDetailsPage = () => {
   
     try {
       await axios.post(
-        'https://localhost:7232/api/Application/apply',
+        'https://shreyansh1807.bsite.net/api/Application/apply',
         {
           jobId: parseInt(id),
           resumeUrl: resumeUrl

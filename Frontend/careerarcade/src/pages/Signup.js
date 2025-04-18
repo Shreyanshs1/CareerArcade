@@ -13,7 +13,7 @@ const Signup = () => {
   });
 
   const navigate = useNavigate();
-  const baseUrl = "https://localhost:7232/api";
+  const baseUrl = "https://shreyansh1807.bsite.net/api";
 
   // Redirect logged-in users
   useEffect(() => {

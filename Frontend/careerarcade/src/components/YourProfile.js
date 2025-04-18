@@ -58,7 +58,7 @@ function YourProfile() {
       setMessage(''); // Clear previous messages
 
       // Construct API URL *inside* the function needing it
-      const API_URL_FETCH = `https://localhost:7232/api/user/${userIdToFetch}`;
+      const API_URL_FETCH = `https://shreyansh1807.bsite.net/api/user/${userIdToFetch}`;
 
       try {
         const response = await fetch(API_URL_FETCH, {
@@ -137,7 +137,7 @@ function YourProfile() {
         return;
     }
     // Construct API URL dynamically using user ID from state
-    const API_URL_UPDATE = `https://localhost:7232/api/user/${user.id}`;
+    const API_URL_UPDATE = `https://shreyansh1807.bsite.net/api/user/${user.id}`;
     setLoading(true);
     setMessage('');
 
@@ -196,7 +196,7 @@ function YourProfile() {
     if (!confirmDelete) return;
 
     // Construct API URL dynamically using user ID from state
-    const API_URL_DELETE = `https://localhost:7232/api/user/${user.id}`;
+    const API_URL_DELETE = `https://shreyansh1807.bsite.net/api/user/${user.id}`;
     setLoading(true);
     setMessage('');
 

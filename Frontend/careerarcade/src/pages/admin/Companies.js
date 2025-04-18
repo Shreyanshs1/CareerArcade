@@ -7,7 +7,7 @@ const Companies = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const COMPANIES_API_URL = 'https://localhost:7232/api/Admin/companies';
+  const COMPANIES_API_URL = 'https://shreyansh1807.bsite.net/api/Admin/companies';
 
   // Function to fetch companies
   const fetchCompanies = async () => {

@@ -9,7 +9,7 @@ const UserComponent = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const API_BASE_URL = 'https://localhost:7232/api/User';
+  const API_BASE_URL = 'https://shreyansh1807.bsite.net/api/User';
 
   // Function to fetch the list of users
   const fetchUsers = async () => {

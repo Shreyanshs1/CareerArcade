@@ -23,7 +23,7 @@ const Job = () => {
       }
 
       try {
-        const response = await fetch(`https://localhost:7232/api/Application/job/${id}`, {
+        const response = await fetch(`https://shreyansh1807.bsite.net/api/Application/job/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -48,7 +48,7 @@ const Job = () => {
 
     const token = localStorage.getItem('token');
     try {
-      const response = await fetch(`https://localhost:7232/api/Job/${id}`, {
+      const response = await fetch(`https://shreyansh1807.bsite.net/api/Job/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -80,7 +80,7 @@ const Job = () => {
     const statusCode = statusMap[statusText];
   
     try {
-      const response = await fetch(`https://localhost:7232/api/Application/update-status/${applicationId}`, {
+      const response = await fetch(`https://shreyansh1807.bsite.net/api/Application/update-status/${applicationId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

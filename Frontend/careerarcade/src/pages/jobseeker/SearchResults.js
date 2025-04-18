@@ -17,7 +17,7 @@ const SearchResults = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`https://localhost:7232/api/Job/search?title=${encodeURIComponent(searchTerm)}`);
+        const response = await axios.get(`https://shreyansh1807.bsite.net/api/Job/search?title=${encodeURIComponent(searchTerm)}`);
         setJobs(response.data);
       } catch (error) {
         console.error('Failed to fetch jobs:', error);

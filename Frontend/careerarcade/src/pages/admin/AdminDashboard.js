@@ -13,7 +13,7 @@ function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const DASHBOARD_API_URL = 'https://localhost:7232/api/Admin/dashboard';
+  const DASHBOARD_API_URL = 'https://shreyansh1807.bsite.net/api/Admin/dashboard';
 
   // Function to fetch dashboard data
   const fetchDashboardData = async () => {

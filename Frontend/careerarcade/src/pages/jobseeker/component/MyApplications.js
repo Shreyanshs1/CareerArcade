@@ -15,7 +15,7 @@ const MyApplications = () => {
 
       try {
         const response = await axios.get(
-          'https://localhost:7232/api/Application/my-applications',
+          'https://shreyansh1807.bsite.net/api/Application/my-applications',
           {
             headers: {
               Authorization: `Bearer ${token}`

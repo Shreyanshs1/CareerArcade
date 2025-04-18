@@ -22,7 +22,7 @@ const EmployerDashboard = () => {
       }
 
       try {
-        const response = await fetch('https://localhost:7232/api/Job/my-jobs', {
+        const response = await fetch('https://shreyansh1807.bsite.net/api/Job/my-jobs', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`

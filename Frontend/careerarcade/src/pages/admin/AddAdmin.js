@@ -13,7 +13,7 @@ function AddAdmin() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const API_URL = 'https://localhost:7232/api/Admin/add-admin';
+  const API_URL = 'https://shreyansh1807.bsite.net/api/Admin/add-admin';
 
   // Handle input change
   const handleChange = (e) => {

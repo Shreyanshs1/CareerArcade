@@ -9,8 +9,8 @@ const Jobs = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const JOBS_API_URL = 'https://localhost:7232/api/Job';
-  const DELETE_JOB_API_URL = 'https://localhost:7232/api/Admin/job';
+  const JOBS_API_URL = 'https://shreyansh1807.bsite.net/api/Job';
+  const DELETE_JOB_API_URL = 'https://shreyansh1807.bsite.net/api/Admin/job';
 
   // Function to fetch jobs
   const fetchJobs = async () => {
