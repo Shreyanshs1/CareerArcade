@@ -140,15 +140,20 @@ CareerArcade is a full-stack job portal application designed to connect job seek
 ---
 
 ## 📸 Screenshots
+### Admin Dashboard
+>![Admin Dashboard](./Screenshots/Admin%20Dashboard.jpeg)
+### Employer Dashboard
+>![Employer Dashboard](./Screenshots/Employer%20Dashboard.jpeg)
+### Jobseeker
+>![Jobseeker Dashboard](./Screenshots/Jobseeker%20Dashboard.jpeg)
 
-> _[Add screenshots here if available, showing UI for job seeker, employer, admin]_
 
 ---
 
 ## ✍️ Authors
 
-- 👨‍💻 [Your Name] – Full Stack Developer  
-- 📫 Contact: [Your Email]  
+- 👨‍💻 Shreyansh Srivastava – Full Stack Developer  
+- 📫 Contact: sheryanshsri1807@gmail.com  
 
 ---
 
