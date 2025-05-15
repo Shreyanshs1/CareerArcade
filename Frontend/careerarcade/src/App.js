@@ -19,6 +19,7 @@ import NotFound from './pages/notfound/NotFound';
 import JobsPage from './pages/jobseeker/JobsPage';
 import JobDetailsPage from './pages/jobseeker/JobDetailsPage';
 import SearchResults from './pages/jobseeker/SearchResults';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
+      <SpeedInsights />
     </>
   );
 }
